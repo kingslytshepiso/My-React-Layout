@@ -1,0 +1,7 @@
+body {
+  min-width: 320px;
+}
+main {
+  display: flex;
+  min-height: 80vh;
+}
