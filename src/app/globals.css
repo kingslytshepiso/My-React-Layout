@@ -1,7 +1,23 @@
+* {
+  --base-bg: rgba(200, 200, 255, 0.8);
+}
 body {
   min-width: 320px;
+  background-color: var(--base-bg);
 }
 main {
   display: flex;
   min-height: 80vh;
+}
+
+.page-content-container {
+  border-radius: 5px;
+  width: 100%;
+  background-color: white;
+}
+.sidebar-container {
+  min-width: 165px;
+}
+header nav {
+  background-color: rgb(120, 120, 200);
 }

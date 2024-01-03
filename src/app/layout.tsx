@@ -5,8 +5,9 @@ import "./globals.css";
 import Header from "./header";
 import Sidebar from "./sidebar";
 import Footer from "./footer";
-import { useEffect } from "react";
 import ImportBsJs from "./importBsJs";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,10 +28,12 @@ export default function RootLayout({
           <Header />
         </header>
         <main className="container-fluid">
-          <div className="d-sm-block d-none d-md-block">
+          <div className="d-sm-block d-none d-md-block sidebar-container">
             <Sidebar />
           </div>
-          <div className="p-3">{children}</div>
+          <Suspense fallback={<Loading />}>
+            <div className="m-3 p-1 page-content-container">{children}</div>
+          </Suspense>
         </main>
 
         <footer>
